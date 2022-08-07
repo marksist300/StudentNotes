@@ -2,7 +2,8 @@ const express = require("express")
 //install and load dotenv
 const dotenv = require('dotenv');
 const connectionToMongoDB= require('./config/db.js')
-const morgan = require("morgan")
+const morgan = require("morgan");
+const expressEjsLayouts = require("express-ejs-layouts");
 //config setup
 dotenv.config( {path: './config/config.env' })
 // express as app and port setup
@@ -15,14 +16,13 @@ if(process.env.NODE_ENV == 'development'){
     app.use(morgan('dev'));
 }
 
+//ejs set up and use
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-app.get('/',(req,res)=>{
-    res.render('index')
-})
 
-
-
+app.use(expressEjsLayouts)
+//routes
+app.use('/', require('./routes/index'))
 
 
 app.listen(PORT, ()=> {
