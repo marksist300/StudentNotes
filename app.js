@@ -4,13 +4,14 @@ const dotenv = require('dotenv');
 const connectionToMongoDB= require('./config/db.js');
 const morgan = require("morgan");
 const { engine } = require('express-handlebars');
-const passport = require('passport');
+const {passport} = require('passport');
 const session = require('express-session')
 //config setup
 dotenv.config( {path: './config/config.env' })
 
 //passport config
-require('.config/passport')(passport)
+require('./config/passport')(passport)
+
 // express as app and port setup
 const app = express()
 const PORT = process.env.PORT || 3000;
@@ -44,6 +45,7 @@ app.use(express.static('public'))
 
 //routes
 app.use('/', require('./routes/index'))
+app.use('/auth', require('./routes/auth'))
 
 
 app.listen(PORT, ()=> {
