@@ -1,12 +1,16 @@
-const express = require("express")
+const path = require('path');
+const express = require("express");
 const dotenv = require('dotenv');
-const connectionToMongoDB= require('./config/db.js')
+const connectionToMongoDB= require('./config/db.js');
 const morgan = require("morgan");
-const { engine } = require('express-handlebars')
-
+const { engine } = require('express-handlebars');
+const passport = require('passport');
+const session = require('express-session')
 //config setup
 dotenv.config( {path: './config/config.env' })
 
+//passport config
+require('.config/passport')(passport)
 // express as app and port setup
 const app = express()
 const PORT = process.env.PORT || 3000;
@@ -20,6 +24,17 @@ connectionToMongoDB()
 if(process.env.NODE_ENV == 'development'){
     app.use(morgan('dev'));
 }
+
+//Sessions middleware, must be above passport middleware in code
+app.use(session({
+    secret: 'anything',
+    resave: false,
+    saveUninitialized: false,
+}))
+
+//passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 //Handlebars setup 
 app.engine('.hbs', engine({defaultLayout: 'main', extname: '.hbs'}))
