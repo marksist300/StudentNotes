@@ -3,7 +3,7 @@ const express = require("express");
 const dotenv = require('dotenv');
 const connectionToMongoDB= require('./config/db.js');
 const morgan = require("morgan");
-const { engine } = require('express-handlebars');
+const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session')
 //config setup
@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Handlebars setup 
-app.engine('.hbs', engine({defaultLayout: 'main', extname: '.hbs'}))
+app.engine('.hbs', exphbs.engine({defaultLayout: 'main', extname: '.hbs'}))
 app.set('view engine', '.hbs')
 
 app.use(express.static('public'))
