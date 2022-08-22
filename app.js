@@ -17,6 +17,10 @@ require('./config/passport')(passport)
 const app = express()
 const PORT = process.env.PORT || 3000;
 
+//setup body parser with express
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json())
+
 //connection to MongoDB
 connectionToMongoDB()
 
