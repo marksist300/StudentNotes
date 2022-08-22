@@ -19,4 +19,22 @@ router.post('/', ensureAuth, async (req,res)=> {
         res.render('error/500')
     }
 })
+
+// Fetch and render notes
+router.get('/', ensureAuth, async (req,res)=>{
+    try{
+        const notes = await Notes.find({ status: 'public'})
+            .populate('user')
+            .sort({ createdAt: 'desc'})
+            .lean()
+        res.render('notes/index', {
+            notes,
+        })
+
+    }
+    catch (err){
+        console.error(err)
+        res.render('error/500')
+    }
+})
 module.exports = router

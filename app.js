@@ -46,11 +46,23 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// handlebars helpers
+const { formatDate, stripTags, truncate } = require('./helpers/hbs')
+
+
 //Handlebars setup 
-app.engine('.hbs', exphbs.engine({defaultLayout: 'main', extname: '.hbs'}))
+app.engine('.hbs', exphbs.engine({
+    helpers: {
+        formatDate,
+        stripTags,
+        truncate,
+    },
+    defaultLayout: 'main', extname: '.hbs'
+}))
 app.set('view engine', '.hbs')
 
 app.use(express.static('public'))
+
 
 //routes
 app.use('/', require('./routes/index'))

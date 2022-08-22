@@ -1,0 +1,26 @@
+<h1>Notes</h1>
+<div class="row">
+    {{#each notes}}
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+
+                </div>
+                <div class="card-content center-align">
+                    <h5>{{title}}</h5>
+                    <p>{{stripTags (truncate body 150)}}</p>
+                    <br>
+                    <div class="chip">
+                        <img src="{{{user.image}}}" alt="User image">
+                        <a href="/notes/user/{{user._id}}"></a>
+                    </div>
+                </div>
+                <div class="card-action center-align">
+                    <a href="/notes/{{_id}}" class=""" btn grey"></a>
+                </div>
+            </div>
+        </div>
+    {{else}}
+        <p>No Notes yet</p>
+    {{/each}}
+</div>
