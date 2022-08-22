@@ -5,7 +5,8 @@ const connectionToMongoDB= require('./config/db.js');
 const morgan = require("morgan");
 const exphbs = require('express-handlebars');
 const passport = require('passport');
-const session = require('express-session')
+const session = require('express-session');
+const MongoStore = require('connect-mongo')
 //config setup
 dotenv.config( {path: './config/config.env' })
 
@@ -27,10 +28,14 @@ if(process.env.NODE_ENV == 'development'){
 }
 
 //Sessions middleware, must be above passport middleware in code
-app.use(session({
+app.use(
+    session({
     secret: 'anything',
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI
+    })
 }))
 
 //passport middleware
