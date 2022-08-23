@@ -20,3 +20,8 @@
 .fa-small{
     font-size: 15px;
 }
+
+.dash-edit-del-btns{
+    display: flex;
+    gap: 10px
+}
