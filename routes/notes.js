@@ -122,4 +122,25 @@ router.delete('/:id', ensureAuth, async (req,res)=>{
     }
 })
 
+// User notes
+router.get('/user/:userId', ensureAuth, async (req,res)=>{
+    try{
+        const notes = await Notes.find({
+            user: req.params.userId,
+            status: 'public',
+        })
+        .populate('user')
+        .lean()
+
+        res.render('notes/index', {
+            notes
+        })
+    }
+    catch(err){
+        console.error(err);
+        // res.render('error/500')
+        res.send('<h1>Noope</h1>')
+    }
+})
+
 module.exports = router

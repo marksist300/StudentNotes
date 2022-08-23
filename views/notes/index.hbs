@@ -12,7 +12,12 @@
                     <br>
                     <div class="chip">
                         <img src="{{{user.image}}}" alt="User image">
-                        <a href="/notes/user/{{user._id}}"></a>
+                        <a href="/notes/user/{{user._id}}">
+                        {{user.firstName}}
+                    {{#if user.lastName}}
+                        {{user.lastName}}
+                    {{/if}}
+                        </a>
                     </div>
                 </div>
                 <div class="card-action center-align">

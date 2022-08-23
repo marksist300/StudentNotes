@@ -19,10 +19,10 @@
                         {{{notes.user.lastName}}}
                     {{/if}}
                     </span>
-                <img src="{{notes.user.image}}" alt="user profile image" class="circle responsive-img img-small">
+                <a href="/notes/user/{{notes.user._id}}"><img src="{{notes.user.image}}" alt="user profile image" class="circle responsive-img img-small"></a>
             </div>
             <div class="card-action">
-                <a href="/notes/user{{notes.user._id}}">More From {{notes.user.firstName}}</a>
+                <a href="/notes/user/{{notes.user._id}}">More From {{notes.user.firstName}}</a>
             </div>
         </div>
     </div>
