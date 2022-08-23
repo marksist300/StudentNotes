@@ -46,8 +46,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+// set up a global variable to read logged user
+app.use((req,res,next)=>{
+    res.locals.user = req.user || null;
+    next();
+})
+
 // handlebars helpers
-const { formatDate, stripTags, truncate } = require('./helpers/hbs')
+const { formatDate, stripTags, truncate, editIcon } = require('./helpers/hbs')
 
 
 //Handlebars setup 
@@ -56,6 +62,7 @@ app.engine('.hbs', exphbs.engine({
         formatDate,
         stripTags,
         truncate,
+        editIcon,
     },
     defaultLayout: 'main', extname: '.hbs'
 }))
