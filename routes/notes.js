@@ -37,4 +37,24 @@ router.get('/', ensureAuth, async (req,res)=>{
         res.render('error/500')
     }
 })
+
+// Edit notes page
+router.get('/edit/:id', ensureAuth, async (req,res)=>{
+    const notes = await Notes.findOne({
+        _id: req.params.id
+    }).lean()
+
+    if(!notes) {
+        return res.render('error/404')
+    }
+
+    if(notes.user != req.user.id){
+        res.redirect('/notes')
+    }
+    else{
+        res.render('notes/edit', {
+            notes,
+        })
+    }
+})
 module.exports = router
