@@ -8,6 +8,7 @@ router.get('/add', ensureAuth, (req,res)=>{
     res.render('notes/add')
 })
 
+//Create a new note
 router.post('/', ensureAuth, async (req,res)=> {
     try{
         req.body.user = req.user.id
@@ -20,7 +21,7 @@ router.post('/', ensureAuth, async (req,res)=> {
     }
 })
 
-// Fetch and render notes
+// Fetch and render all notes as cards
 router.get('/', ensureAuth, async (req,res)=>{
     try{
         const notes = await Notes.find({ status: 'public'})
@@ -38,13 +39,31 @@ router.get('/', ensureAuth, async (req,res)=>{
     }
 })
 
+
+// Read specific note
+router.get('/:id', ensureAuth, async (req,res)=>{
+    try{
+        let notes = await Notes.findById(req.params.id)
+            .populate('user')
+            .lean()
+        if(!notes){
+            return res.render('error/404')
+        }
+        res.render('notes/readNote', {
+            notes
+        })
+    }
+    catch(err){
+        console.error(err)
+        res.render('error/404')
+    }
+})
 // Edit notes page
 router.get('/edit/:id', ensureAuth, async (req,res)=>{
     try{
         const notes = await Notes.findOne({
             _id: req.params.id
         }).lean()
-
         if(!notes) {
             return res.render('error/404')
         }

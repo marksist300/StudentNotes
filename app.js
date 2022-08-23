@@ -90,6 +90,7 @@ app.use('/', require('./routes/index'))
 app.use('/auth', require('./routes/auth'))
 app.use('/notes', require('./routes/notes'))
 app.use('/notes/edit', require('./routes/notes'))
+// app.use('/notes/readNote', require('./routes/notes'))
 
 app.listen(PORT, ()=> {
     console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)
