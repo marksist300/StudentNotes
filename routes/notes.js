@@ -57,4 +57,25 @@ router.get('/edit/:id', ensureAuth, async (req,res)=>{
         })
     }
 })
+
+//Update note
+router.put('/:id', ensureAuth, async (req,res)=>{
+    let notes = await Notes.findById(req.params.id).lean()
+
+    if(!notes){
+        return res.render('error/404');
+    }
+
+    if(notes.user != req.user.id){
+        res.redirect('/notes')
+    }
+    else{
+        notes = await Notes.findOneAndUpdate({_id: req.params.id}, req.body,
+        {
+            new: true,
+            runValidators: true,
+        })
+        res.redirect('/dashboard')
+    }
+})
 module.exports = router

@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require('dotenv');
 const connectionToMongoDB= require('./config/db.js');
 const morgan = require("morgan");
+const methodOverride = require('method-override')
 const exphbs = require('express-handlebars');
 const passport = require('passport');
 const session = require('express-session');
@@ -20,6 +21,18 @@ const PORT = process.env.PORT || 3000;
 //setup body parser with express
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json())
+
+
+// setup for methodOverride
+// used to change the method on a particular piece of html
+// e.g. changing a post to a put request etc.
+app.use(methodOverride((req,res)=>{
+    if(req.body && typeof req.body === 'object' && '_method' in req.body){
+        let method = req.body._method;
+        delete req.body._method;
+        return method;
+    }
+}))
 
 //connection to MongoDB
 connectionToMongoDB()
@@ -53,7 +66,7 @@ app.use((req,res,next)=>{
 })
 
 // handlebars helpers
-const { formatDate, stripTags, truncate, editIcon } = require('./helpers/hbs')
+const { formatDate, stripTags, truncate, editIcon, select } = require('./helpers/hbs')
 
 
 //Handlebars setup 
@@ -63,6 +76,7 @@ app.engine('.hbs', exphbs.engine({
         stripTags,
         truncate,
         editIcon,
+        select,
     },
     defaultLayout: 'main', extname: '.hbs'
 }))
