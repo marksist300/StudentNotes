@@ -46,8 +46,5 @@ module.exports = {
             new RegExp('>' + selected + '</option>'),
             ' selected="selected"$&'
           )
-      },
-      punctuation: function(input) {
-        return input.replace('&#39;', "'")
       }
 }
