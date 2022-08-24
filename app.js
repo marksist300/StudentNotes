@@ -66,7 +66,7 @@ app.use((req,res,next)=>{
 })
 
 // handlebars helpers
-const { formatDate, stripTags, truncate, editIcon, select } = require('./helpers/hbs')
+const { formatDate, stripTags, truncate, editIcon, select, punctuation } = require('./helpers/hbs')
 
 
 //Handlebars setup 
@@ -77,6 +77,7 @@ app.engine('.hbs', exphbs.engine({
         truncate,
         editIcon,
         select,
+        punctuation,
     },
     defaultLayout: 'main', extname: '.hbs'
 }))

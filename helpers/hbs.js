@@ -15,7 +15,14 @@ module.exports = {
         return str
     },
     stripTags: function (input) {
-        return input.replace(/<(?:.|\n)*?>/gm, '')
+        input = input.replace(/<(?:.|\n)*?>/gm, '')
+        input = input.replace(/&#39;/gm, "'");
+        input = input.replace(/&quot;/gm, '"');
+        input = input.replace(/&nbsp;/gm, ' ');
+        input = input.replace(/&amp;/gm, '&');
+        input = input.replace(/&pound;/gm, '£')
+        input = input.replace(/&euro;/gm, '€')
+        return input;
     },
     editIcon: function (notesUser, loggedUser, noteId, floating = true) {
         if (notesUser._id.toString() == loggedUser._id.toString()) {
@@ -40,4 +47,7 @@ module.exports = {
             ' selected="selected"$&'
           )
       },
+      punctuation: function(input) {
+        return input.replace('&#39;', "'")
+      }
 }
