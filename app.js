@@ -11,12 +11,16 @@ const MongoStore = require('connect-mongo')
 //config setup
 dotenv.config( {path: './config/config.env' })
 
+
 //passport config
 require('./config/passport')(passport)
 
 // express as app and port setup
 const app = express()
 const PORT = process.env.PORT || 3000;
+
+// static file rendering
+app.use(express.static('public'))
 
 //setup body parser with express
 app.use(express.urlencoded({ extended: false}));
@@ -82,7 +86,6 @@ app.engine('.hbs', exphbs.engine({
 }))
 app.set('view engine', '.hbs')
 
-app.use(express.static('public'))
 
 
 //routes
