@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require("express");
 const dotenv = require('dotenv');
-const connectionToMongoDB= require('./config/db.js');
+const connectionToMongoDB= require('./config/db');
 const morgan = require("morgan");
 const methodOverride = require('method-override')
 const exphbs = require('express-handlebars');
