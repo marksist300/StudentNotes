@@ -87,3 +87,28 @@ body{
 .img-small{
     max-width: 180px;
 }
+
+/*input fields on note edit screen*/
+.input-field label {
+    color: #fff !important;
+}
+.input-field input[type=text]:focus + label {
+    color: #fff !important;
+}
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #fff !important;
+    box-shadow: 0 1px 0 0 #fff !important;
+}
+
+.input-field *{
+    color: white;
+}
+
+input.select-dropdown {
+    background: #282D35 !important;
+    color: #fff;
+}
+ul.dropdown-content.select-dropdown li span {
+    background: #282D35;
+    color: #fff;
+}
