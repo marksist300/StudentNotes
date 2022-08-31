@@ -3,8 +3,6 @@ This is a CRUD app built to help keep track of students' progress, lessons notes
 
 **Link to project:** http://student-notes-app.herokuapp.com/
 
-![alt tag](http://placecorgi.com/1200/650)
-
 ## How It's Made:
 
 **Tech used:** HTML, CSS + MaterializeCSS, JavaScript (Node.js), Handlebars, MongoDB (Mongoose)
@@ -14,8 +12,8 @@ This was a project built using OAuth2 authentication for access via a Google acc
 ## Optimizations
 
 There's room for improvement across the app:
-####Styling: can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes
-####Authentication: other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
+***Styling:*** can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes
+***Authentication:*** other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
 
 
 ## Lessons Learned:
