@@ -27,10 +27,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row edit-btns">
             <input type="submit" value="Save" class="btn blue darken-2">
-            <a href="/dashboard" class="btn red darken-2">Cancel</a>
-        </div>
-
+            <a href="/dashboard" class="btn grey darken-1">Cancel</a>
     </form>
+    <form action="/notes/{{{notes._id}}}" method="post" id="delete-form">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="float center btn red darken-2">Delete</button>
+    </form> 
+    </div>
 </div>

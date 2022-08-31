@@ -112,6 +112,7 @@ router.put('/:id', ensureAuth, async (req,res)=>{
 
 // Delete Route
 router.delete('/:id', ensureAuth, async (req,res)=>{
+    console.log(req)
     try{
         await Notes.remove( {_id: req.params.id} )
         res.redirect('/dashboard')
