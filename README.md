@@ -3,6 +3,9 @@ This is a CRUD app built to help keep track of students' progress, lessons notes
 
 **Link to project:** http://student-notes-app.herokuapp.com/
 
+https://user-images.githubusercontent.com/88390425/190100432-842858cd-b2de-45e9-8715-b48a9627d68b.mp4
+
+
 
 ## How It's Made:
 
