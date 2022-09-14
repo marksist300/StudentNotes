@@ -2,8 +2,8 @@
 This is a CRUD app built to help keep track of students' progress, lessons notes, plans etc. I built the app entirely for myself, when teaching it's very important to have a clear, easy and quick way to keep notes that are accessible from anywhere and also secured. This app solves those problems and was a great deal of fun to develop. The app is fully personalisable, requiring sign in with Google Oauth2. All notes are saved permanently in a MongoDB database, and viewable only if made 'public'. Otherwise are entirely private.
 
 **Link to project:** http://student-notes-app.herokuapp.com/
-<img width="1439" alt="Screenshot 2022-08-31 at 18 10 41" src="https://user-images.githubusercontent.com/88390425/187740417-db860394-bd66-497d-aaaa-44631cbb3535.png">
-<img width="1434" alt="Screenshot 2022-08-31 at 18 10 57" src="https://user-images.githubusercontent.com/88390425/187740425-0fb52c2d-f977-4c27-9b33-a478c30ef376.png">
+
+![alt tag](http://placecorgi.com/1200/650)
 
 ## How It's Made:
 
@@ -13,9 +13,9 @@ This was a project built using OAuth2 authentication for access via a Google acc
 
 ## Optimizations
 
-There's room for improvement across the app:</br>
-***Styling:*** can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes</br>
-***Authentication:*** other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
+There's room for improvement across the app:
+####Styling: can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes
+####Authentication: other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
 
 
 ## Lessons Learned:

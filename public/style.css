@@ -106,3 +106,12 @@ footer{
     gap: .7rem;
     padding-left: 1rem;
 }
+
+@media screen and (min-width: 650px) {
+    .card-note-section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px; 
+        align-items: stretch;
+    }
+}
