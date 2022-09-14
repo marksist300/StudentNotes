@@ -3,7 +3,6 @@ This is a CRUD app built to help keep track of students' progress, lessons notes
 
 **Link to project:** http://student-notes-app.herokuapp.com/
 
-![alt tag](http://placecorgi.com/1200/650)
 
 ## How It's Made:
 
