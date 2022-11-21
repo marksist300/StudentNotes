@@ -1,7 +1,7 @@
 # Student Notes App
 This is a CRUD app built to help keep track of students' progress, lessons notes, plans etc. I built the app entirely for myself, when teaching it's very important to have a clear, easy and quick way to keep notes that are accessible from anywhere and also secured. This app solves those problems and was a great deal of fun to develop. The app is fully personalisable, requiring sign in with Google Oauth2. All notes are saved permanently in a MongoDB database, and viewable only if made 'public'. Otherwise are entirely private.
 
-**Link to project:** http://student-notes-app.herokuapp.com/
+**Link to project:** https://studentnotesapp.onrender.com
 
 https://user-images.githubusercontent.com/88390425/190100432-842858cd-b2de-45e9-8715-b48a9627d68b.mp4
 
@@ -16,8 +16,10 @@ This was a project built using OAuth2 authentication for access via a Google acc
 ## Optimizations
 
 There's room for improvement across the app:
-####Styling: can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes
-####Authentication: other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
+<br/>
+**Styling**: can be improved, especially on the index screen it can be made more responsive, currently the cards can become distorted at certain screen sizes
+<br/>
+**Authentication**: other ways for users to be authenticated could be added, Microsoft etc. Also a more complex system for public and private files could be set up, so perhaps students could log in and only see the files that their teacher has written and marked for them, so the notes could be more specific and serve a purpose beyond the teacher keeping notes.
 
 
 ## Lessons Learned:
