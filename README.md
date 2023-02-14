@@ -1,7 +1,15 @@
 # Student Notes App
 This is a CRUD app built to help keep track of students' progress, lessons notes, plans etc. I built the app entirely for myself, when teaching it's very important to have a clear, easy and quick way to keep notes that are accessible from anywhere and also secured. This app solves those problems and was a great deal of fun to develop. The app is fully personalisable, requiring sign in with Google Oauth2. All notes are saved permanently in a MongoDB database, and viewable only if made 'public'. Otherwise are entirely private.
 
-**Link to project:** https://studentnotesapp.onrender.com
+<h2>
+    <a href="https://studentnotesapp.onrender.com">View Site Here*</a>
+  </h2>
+  *<sub>Note: The backend server is running on a free tier, which means after 20 minutes of inactivity it spins down. So, please be patient, starting from cold the server can take around 20 seconds to start up and respond.</sub>
+</div>
+
+<br/>
+<br/>
+
 
 https://user-images.githubusercontent.com/88390425/190100432-842858cd-b2de-45e9-8715-b48a9627d68b.mp4
 
